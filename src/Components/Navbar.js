@@ -16,9 +16,9 @@ export default function Navbar(){
                         <li className="nav-item active">
                             <Link className="nav-link" to="/">Home</Link>
                         </li>
-                        <li className="nav-item active">
-                            <Link className="nav-link" to="/about">About</Link>
-                        </li>
+                        {/* <li className="nav-item active">
+                            <Link className="nav-link" to="/about">About</Link> */}
+                        {/* </li> */}
                         <li className="nav-item active">
                             <Link className="nav-link" to="/sports">Sports</Link>
                         </li>
