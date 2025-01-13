@@ -10,9 +10,11 @@ export default function News(props){
     const[page, setPage] = useState(1);
     const[totalResults, setTotalResults] = useState(0);
 
+    const apiKey = process.env.REACT_APP_API_KEY;
+
     useEffect(() => {
         async function fetchData() {
-            let url = `https://newsapi.org/v2/top-headlines?category=${props.category}&apiKey=${props.apiKey}&page=${page}&pageSize=12`;
+            let url = `https://newsapi.org/v2/top-headlines?category=${props.category}&apiKey=${apiKey}&page=${page}&pageSize=12`;
             setLoader(true);
             let data = await fetch(url);
             let parsedData = await data.json();
@@ -27,7 +29,7 @@ export default function News(props){
     const fetchMoreData = async() => {
         // this.setState({page: this.state.page + 1});
 
-        let url = `https://newsapi.org/v2/top-headlines?category=${props.category}&apiKey=${props.apiKey}&page=${page + 1}&pageSize=12`;
+        let url = `https://newsapi.org/v2/top-headlines?category=${props.category}&apiKey=${apiKey}&page=${page + 1}&pageSize=12`;
         setLoader(true);
         let data = await fetch(url);
         let parsedData = await data.json();
